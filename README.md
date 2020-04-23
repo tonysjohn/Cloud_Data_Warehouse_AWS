@@ -3,7 +3,7 @@
 ## Introduction
 The objective of this project is to create and deploy a data warehouse model for a fictional company Sparkify for its new music streaming application.
 
-This involves proportioning in a AWS Redshift Datawhouse, creating necessary tables and deploying a ETL pipeline to push data to Amazon S3 Data Store. The solutioning is done with AWS Redshift database and ETL pipeline is built using Python and SQL. The input data are in JSON logs and are comprised of user activity logs and metadata about songs. Finally, the database is tested using basic queries to compare with expected results.
+This involves proportioning in a AWS Redshift Data warehouse, creating necessary tables and deploying a ETL pipeline to push data to Amazon S3 Data Store. The solutioning is done with AWS Redshift database and ETL pipeline is built using Python and SQL. The input data are in JSON logs and are comprised of user activity logs and metadata about songs. Finally, the database is tested using basic queries to compare with expected results.
 
 ## Project Datasets
 #### Song Metadata Dataset
