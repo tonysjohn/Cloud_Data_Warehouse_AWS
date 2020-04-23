@@ -1,9 +1,9 @@
 *Disclaimer: This project is part of Udacity Data Engineering Nanodegree*
 
 ## Introduction
-The objective of this project is to create and deploy a data model for a fictional company Sparkify for its new music streaming application.
+The objective of this project is to create and deploy a data warehouse model for a fictional company Sparkify for its new music streaming application.
 
-This involves proportioning a database schema, creating necessary tables and deploying a ETL pipeline to push data to Data Store. The solutioning is done with PostgreSQL database and ETL pipeline is built using Python and SQL. The input data are in JSON logs and are comprised of user activity logs and metadata about songs. Finally, the database is tested using basic queries to compare with expected results.
+This involves proportioning in a AWS Redshift Datawhouse, creating necessary tables and deploying a ETL pipeline to push data to Amazon S3 Data Store. The solutioning is done with AWS Redshift database and ETL pipeline is built using Python and SQL. The input data are in JSON logs and are comprised of user activity logs and metadata about songs. Finally, the database is tested using basic queries to compare with expected results.
 
 ## Project Datasets
 #### Song Metadata Dataset
@@ -28,7 +28,7 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 
 ![Log Data sample](/images/log-data.png)
 
-## Schema for Song Play Analysis
+## Schema for Data Warehouse
 Using the song and log datasets, you'll need to create a star schema optimized for queries on song play analysis. This includes the following tables.
 
 ![Schema Diagram](/images/schema.PNG)
@@ -36,8 +36,8 @@ Using the song and log datasets, you'll need to create a star schema optimized f
 ## ETL Process
 
 etl.py file is used to implement the ETL process
-1. Data from __Song Metadata__ files are fed to __Songs__ and __Artists__ tables
-2. Data from __User Avity log__ files are fed to populate __Songplays__, __Users__ and __Time__ tables
+1. __Song Metadata__ files from Amazon S3 data store are fed to __staging_events__ table in AWS Redshift database using COPY command. The data is thereafter cleaned and type casted to proper columns in __Songs__ and __Artists__ tables.
+2. __User Avity log__ files from Amazon S3 data store are fed to __staging_songs__ table in AWS Redshift database using COPY command. The data is thereafter cleaned and type casted to proper columns in __Songplays__, __Users__ and __Time__ tables.
 
 Required SQL queries are saved in sql_queries.py file.
 
