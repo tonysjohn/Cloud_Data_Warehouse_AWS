@@ -39,7 +39,7 @@ etl.py file is used to implement the ETL process
 1. __Song Metadata__ files from Amazon S3 data store are fed to __staging_events__ table in AWS Redshift database using COPY command. The data is thereafter cleaned and type casted to proper columns in __Songs__ and __Artists__ tables.
 2. __User Activity log__ files from Amazon S3 data store are fed to __staging_songs__ table in AWS Redshift database using COPY command. The data is thereafter cleaned and type casted to proper columns in __Songplays__, __Users__ and __Time__ tables.
 
-![Schema Diagram](/images/.PNG)
+![ETL](/images/ETL.PNG)
 
 Required SQL queries are saved in sql_queries.py file.
 
